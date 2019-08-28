@@ -1,2 +1,2 @@
 # HelperFunctions
-This is a collection of functions that help me
+This is a collection of Powershell functions that help me. Please Free to add/change anything. 
