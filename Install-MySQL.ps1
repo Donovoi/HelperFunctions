@@ -1,7 +1,3 @@
-
-
-
-
 function Update-VcRedist {
 <#
 .SYNOPSIS
