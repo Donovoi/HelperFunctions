@@ -71,10 +71,10 @@ Install-MySQL -dbdirectory 'C:\ProgramData\MySQL\MySQL Server 5.7' -tempdownload
 
   process {
     #Download and install MySQL
-    Invoke-WebRequest -UseBasicParsing -Uri 'https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-web-community-8.0.17.0.msi' -OutFile "$tempdownloaddirectory\mysqlinstaller.msi";
+    Invoke-WebRequest -UseBasicParsing -Uri 'https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-web-community-8.0.18.0.msi' -OutFile "$tempdownloaddirectory\mysqlinstaller.msi";
     Start-Process -FilePath "$tempdownloaddirectory\mysqlinstaller.msi" -Wait -ArgumentList '/quiet';
     Set-Location -Verbose -Path 'c:\program files (x86)\MySQL\mysql installer for windows\';
-    cmd.exe /c "mysqlInstallerConsole.exe  community install server;5.7.27;x64:*:type=config;errorlogname=`"MySqlerrorlog.log`";openfirewall=`"true`";openfirewallforxprotocol=`"false`";passwd=`"$dbpassword`";port=`"3306`";serverid=`"1`";servertype=`"Server`";slowlog=`"true`";datadir=`"$dbdirectory`" -silent";
+    cmd.exe /c "mysqlInstallerConsole.exe  community install server;5.7.28;x64:*:type=config;errorlogname=`"MySqlerrorlog.log`";openfirewall=`"true`";openfirewallforxprotocol=`"false`";passwd=`"$dbpassword`";port=`"3306`";serverid=`"1`";servertype=`"Server`";slowlog=`"true`";datadir=`"$dbdirectory`" -silent";
     #Make sure MySQL is added to Path (will need reboot)
     $path = ";C:\Program Files\MySQL\MySQL Server 5.7\bin;";
     $theCurrentPath = (Get-ItemProperty -Path "Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment" -Name PATH).path;
