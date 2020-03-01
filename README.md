@@ -40,25 +40,8 @@ This function must be run locally as an administrator and does a few things to e
 
 8. All done! It is recommended to reboot the server to ensure MySQL is install correctly
 
-## Things ToDo
 
-#### **Update-VcRedist**
-
-* Make it better.
-  
-* Add the ability to do this update remotely and on more then one computer.
-
-#### **Install-MySQL**
-
-* Make it better
-  
-* Add the ability to remotely install and on more than one computer.
-
-* Optimise the Optimisation (Too many Set-Content's)
-
-* Allow user to choose any MySQL version
-
-#### **format-australian-addresses.sql**
+## **format-australian-addresses.sql**
   
   This is a set of User Defined Functions in MySQL that I created recently for a client.
 
@@ -77,7 +60,7 @@ The function will make sure there is a comma after the number i.e "123," and not
 
 These Functions need MySQL server version 8 and above.
 
-#### **format-australian-numbers.sql**
+## **format-australian-numbers.sql**
 
   The usage is simply `Select **FUNCTION_NAME(COLUMN_NAME)** FROM DATABASENAME;`
 
@@ -90,3 +73,21 @@ The function will first remove any spaces from the data. Then it will look for n
 Once we've done that we will then format the landline numbers like so "00 0000 0000" and the 1300 numbers like so "1300 000 000".
 
 I'm a MySQL newbie so any feedback or pull requests are much appreciated!
+
+## Things ToDo
+
+#### **Update-VcRedist**
+
+* Make it better.
+  
+* Add the ability to do this update remotely and on more then one computer.
+
+#### **Install-MySQL**
+
+* Make it better
+  
+* Add the ability to remotely install and on more than one computer.
+
+* Optimise the Optimisation (Too many Set-Content's)
+
+* Allow user to choose any MySQL version
