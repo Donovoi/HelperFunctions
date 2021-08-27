@@ -94,13 +94,12 @@ Once that's done, we lastly Test-Man to make sure we have a successful connectio
 
 Let me know if you think this should be changed, I'd love to hear your words!
 
+___
 
 ## Things ToDo
 
 #### **Update-VcRedist**
-
-* Make it better.
-  
+ 
 * Add the ability to do this update remotely and on more then one computer.
 
 #### **Install-MySQL**
