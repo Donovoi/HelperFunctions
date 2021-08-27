@@ -74,6 +74,27 @@ Once we've done that we will then format the landline numbers like so "00 0000 0
 
 I'm a MySQL newbie so any feedback or pull requests are much appreciated!
 
+## **Enable-Remoting.ps1**
+
+This function will use Sysinternals PSExec to enable Windows Remote Management on an any computer that is on the same network and you have administrator credentials for.
+Requires Powershell 5.1 because it uses the CredentialManager Module which uses classes from System.Web.dll which is not available to .Net Core see [Here](https://github.com/PowerShell/PowerShell/issues/11533#issuecomment-724590578).
+
+
+Usage ```Enable-Remoting -Computer DC1```
+
+You will then be asked for Credentials i.e `dc1\Administrator` `Password01!`. 
+
+Once the credentials hae been entered, the script will check if the CredentialManager module exists, if not then download and install.
+
+Then we check to see if we can call `PSExec.exe`. If not, download and add Sysinternals to path (add to path twice to make doubly sure).
+
+Once we can call `PSExec.exe`, we then make calls to the remote computer/s and work to enable WinRM, PSremoting, and change Execution Policy to Bypass (Probably not good to do in production ey).
+
+Once that's done, we lastly Test-Man to make sure we have a successful connection.
+
+Let me know if you think this should be changed, I'd love to hear your words!
+
+
 ## Things ToDo
 
 #### **Update-VcRedist**
